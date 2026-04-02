@@ -7,6 +7,7 @@ body {
 a {
   color: rgb(138, 78, 23);
   text-decoration: none;
+  background-color: rgb(255, 200, 0, 0.542);
 }
 
 /* HEADER */
@@ -27,7 +28,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5em;
   }
   nav a {
     flex-grow: 0;
@@ -46,7 +46,6 @@ nav a {
   font-weight: bold;
   border-radius: 100px;
   text-align: center;
-  background-color: rgb(255, 200, 0, 0.542);
   padding: 0.8em 0;
   font-size: 1.3em;
 }
@@ -96,7 +95,6 @@ main h1 {
   font-size: 1.2em;
 }
 .card a {
-  background-color: rgba(255, 200, 0, 0.542);
   font-weight: bold;
   padding: 0.5em 3em;
   border-radius: 100px;
@@ -138,9 +136,7 @@ main h1 {
     padding: 1.5em 1em;
   }
   nav a:not(:first-child) {
-    flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 0;
     padding: 1.2em 0.5em;
   }
   nav a:nth-of-type(2),
@@ -199,9 +195,62 @@ main h1 {
     top: 0;
     border-radius: 0;
     min-height: 100vh;
+    min-width: 250px;
     padding: 2em;
+    gap: 3em;
   }
-  nav a:non(:first-child) {
+  nav a:not(:first-child) {
+    width: 100%;
+    padding: 2em 0;
+  }
+  nav a:first-child {
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 2em;
+    padding: 0.8em 0;
+    padding: 1em 0;
+  }
+  /* CARDS */
+  .cards {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(33% - 1em);
+    max-width: 260px;
+    margin: 0;
+  }
+  /* NEWS */
+  .news h2 {
+    font-size: 2.8em;
+  }
+  .news article h3 {
+    font-size: 1.8em;
+  }
+  a:hover {
+    background-color: rgba(172, 143, 37, 0.542);
+    color: white;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .news article {
+    display: flex;
+    gap: 1em;
+  }
+  .news article div {
+    order: 2;
+  }
+  .news article img {
+    order: 1;
+    /* max-width: 40%; */
   }
 }
